@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мой дневник</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-text">
+      <h1>Мой дневник</h1>
+      <p id="today"></p>
+    </div>
+    <button id="add-task">+</button>
+  </header>
+
+  <main>
+    <section id="schedule-page">
+
+      <div class="week-navigation">
+        <button id="prev-week">‹</button>
+        <div id="week-label"></div>
+        <button id="next-week">›</button>
+      </div>
+
+      <button id="current-week">Текущая неделя</button>
+
+      <div id="schedule"></div>
+
+      <div id="day-details"></div>
+
+    </section>
+
+    <section id="subjects-page" hidden>
+      <h2>Предметы</h2>
+      <div id="subjects"></div>
+    </section>
+
+    <section id="settings-page" hidden>
+      <h2>Настройки</h2>
+      <button id="edit-schedule">
+        Изменить расписание
+      </button>
+      <button id="edit-holidays">
+        Выходные и каникулы
+      </button>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button data-page="schedule" class="active">
+      <span>▦</span>
+      Расписание
+    </button>
+    <button data-page="subjects">
+      <span>☷</span>
+      Предметы
+    </button>
+    <button data-page="settings">
+      <span>⚙</span>
+      Настройки
+    </button>
+  </nav>
+
+  <script src="./script.js"></script>
+</body>
+</html>
