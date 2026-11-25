@@ -1,0 +1,297 @@
+
+:root {
+  --background: #f5f6f8;
+  --surface: #ffffff;
+  --text: #25282d;
+  --muted: #92969e;
+  --accent: #527b69;
+
+  --gray: #e9eaed;
+  --green: #bce5c9;
+  --yellow: #f8e7a1;
+  --orange: #f7c18c;
+  --red: #f2a0a0;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  padding-bottom: 100px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+button:active {
+  opacity: 0.7;
+}
+
+/* Верхняя панель */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 18px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+#today {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+#add-task {
+  background: var(--accent);
+  color: white;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  font-size: 28px;
+  border-radius: 14px;
+}
+
+/* Основное содержимое */
+
+main {
+  padding: 0 12px;
+}
+
+/* Переключение недель */
+
+.week-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 6px;
+}
+
+.week-navigation button {
+  font-size: 26px;
+  width: 42px;
+}
+
+#week-label {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#current-week {
+  display: block;
+  margin: 10px auto 16px;
+  background: transparent;
+  color: var(--accent);
+  font-size: 13px;
+}
+
+/* Недельное расписание */
+
+#schedule {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.day-column {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.day-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 2px;
+  background: var(--surface);
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+.day-header.today {
+  background: var(--accent);
+  color: white;
+}
+
+.day-header.selected {
+  outline: 2px solid var(--accent);
+}
+
+.lesson {
+  min-height: 62px;
+  padding: 5px 2px;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.gray {
+  background: var(--gray);
+}
+
+.green {
+  background: var(--green);
+}
+
+.yellow {
+  background: var(--yellow);
+}
+
+.orange {
+  background: var(--orange);
+}
+
+.red {
+  background: var(--red);
+}
+
+.extra-deadline {
+  border: 1px dashed #999;
+  border-radius: 9px;
+  padding: 8px 2px;
+  text-align: center;
+  font-size: 11px;
+}
+
+.day-add {
+  background: transparent;
+  border: 1px dashed #c4c7cc;
+  color: var(--muted);
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 9px;
+}
+
+/* Подробный просмотр дня */
+
+#day-details {
+  margin-top: 22px;
+}
+
+.detail-card {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 8px;
+}
+
+.detail-card h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.detail-card p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.days-left {
+  font-size: 11px;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+/* Вкладка предметов */
+
+.subject-card {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.subject-bar {
+  display: flex;
+  height: 38px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Настройки */
+
+#settings-page button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  text-align: left;
+  padding: 16px;
+}
+
+/* Нижняя навигация */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  background: var(--surface);
+  border-top: 1px solid #e5e5e5;
+  padding: 8px 4px;
+  padding-bottom: calc(8px + env(safe-area-inset-bottom));
+  z-index: 100;
+}
+
+.bottom-nav button {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--muted);
+  background: transparent;
+}
+
+.bottom-nav button span {
+  font-size: 23px;
+}
+
+.bottom-nav button.active {
+  color: var(--accent);
+  font-weight: 600;
+}
